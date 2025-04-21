@@ -1,5 +1,8 @@
 import ICurrenciesClient from 'src/application/clients/icurrencies.client';
 
+/**
+ * The `CurrenciesClient` class fetches currency exchange rates based on a specified base currency
+ */
 class CurrenciesClient implements ICurrenciesClient {
   private readonly BASE_URL: string | null | undefined =
     process.env.CURRENCY_API_URI;
