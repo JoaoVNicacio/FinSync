@@ -13,7 +13,7 @@ interface ICurrenciesClient {
    */
   getCurencies(
     baseCurrency: string,
-  ): Promise<Record<string, bigint> | null | undefined>;
+  ): Promise<Record<string, number> | null | undefined>;
 }
 
 const ICurrenciesClient = Symbol('ICurrenciesClient');

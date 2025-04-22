@@ -11,7 +11,7 @@ class CurrenciesService implements ICurrenciesService {
 
   async getCurenciesAndConversions(
     baseCurrency: string = DEFAULT_CURRENCY,
-  ): Promise<Record<string, bigint> | null | undefined> {
+  ): Promise<Record<string, number> | null | undefined> {
     baseCurrency = baseCurrency.toLowerCase();
 
     return await this._currencyClient.getCurencies(baseCurrency);
