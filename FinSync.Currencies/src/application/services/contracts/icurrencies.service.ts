@@ -8,7 +8,7 @@ interface ICurrenciesService {
    */
   getCurenciesAndConversions(
     baseCurrency: string,
-  ): Promise<Record<string, bigint> | null | undefined>;
+  ): Promise<Record<string, number> | null | undefined>;
 
   /**
    * The method asynchronously retrieves and returns an array of available currency acronyms.
@@ -16,5 +16,7 @@ interface ICurrenciesService {
    */
   getAvailableCurrenciesAcronyms(): Promise<Array<string>>;
 }
+
+const ICurrenciesService = Symbol('ICurrenciesService');
 
 export default ICurrenciesService;

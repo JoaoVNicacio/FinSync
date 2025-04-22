@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package currencies;
+
+service CurrenciesGRPCService {
+  rpc GetCurrenciesAndConversions (BaseCurrencyRequest) returns (CurrencyConversionsResponse);
+  rpc GetAvailableCurrenciesAcronyms (Empty) returns (AvailableCurrenciesResponse);
+}
+
+message BaseCurrencyRequest {
+  string baseCurrency = 1;
+}
+
+message CurrencyConversionsResponse {
+  map<string, double> conversions = 1;
+}
+
+message AvailableCurrenciesResponse {
+  repeated string acronyms = 1;
+}
+
+message Empty {}

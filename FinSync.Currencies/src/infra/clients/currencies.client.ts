@@ -9,7 +9,7 @@ class CurrenciesClient implements ICurrenciesClient {
 
   async getCurencies(
     baseCurrency: string,
-  ): Promise<Record<string, bigint> | null | undefined> {
+  ): Promise<Record<string, number> | null | undefined> {
     if (!this.BASE_URL || this.BASE_URL.trim().length < 1) return null;
 
     baseCurrency = baseCurrency.toLowerCase();
@@ -19,7 +19,7 @@ class CurrenciesClient implements ICurrenciesClient {
     ).json()) as object;
 
     if (baseCurrency in response)
-      return response[baseCurrency] as Record<string, bigint>;
+      return response[baseCurrency] as Record<string, number>;
 
     return null;
   }
