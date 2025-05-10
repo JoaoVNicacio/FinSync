@@ -4,17 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{4E3A823A-B8A3-4D85-82BF-93C11E01CA27}"
-	ProjectSection(SolutionItems) = preProject
-		Src\Usings.cs = Src\Usings.cs
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.API", "Src\FinSync.Finances.API\FinSync.Finances.API.csproj", "{1769EF3C-042C-4BA4-8EFA-7780066EE8C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.Domain", "Src\FinSync.Finances.Domain\FinSync.Finances.Domain.csproj", "{F549AC66-EA59-4D19-A01A-65D143F018A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.Infra", "Src\FinSync.Finances.Infra\FinSync.Finances.Infra.csproj", "{4F8964AC-DA03-4967-89EF-7F1FB9399AFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.Application", "Src\FinSync.Finances.Application\FinSync.Finances.Application.csproj", "{7C200D23-5BCE-4B9F-A6EA-64C0E3E289D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.API", "Src\FinSync.Finances.API\FinSync.Finances.API.csproj", "{D1350CE3-520F-4E55-871F-6D8EBCBEF201}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,16 +22,12 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1769EF3C-042C-4BA4-8EFA-7780066EE8C5} = {4E3A823A-B8A3-4D85-82BF-93C11E01CA27}
 		{F549AC66-EA59-4D19-A01A-65D143F018A9} = {4E3A823A-B8A3-4D85-82BF-93C11E01CA27}
 		{4F8964AC-DA03-4967-89EF-7F1FB9399AFD} = {4E3A823A-B8A3-4D85-82BF-93C11E01CA27}
 		{7C200D23-5BCE-4B9F-A6EA-64C0E3E289D5} = {4E3A823A-B8A3-4D85-82BF-93C11E01CA27}
+		{D1350CE3-520F-4E55-871F-6D8EBCBEF201} = {4E3A823A-B8A3-4D85-82BF-93C11E01CA27}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1769EF3C-042C-4BA4-8EFA-7780066EE8C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1769EF3C-042C-4BA4-8EFA-7780066EE8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1769EF3C-042C-4BA4-8EFA-7780066EE8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1769EF3C-042C-4BA4-8EFA-7780066EE8C5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F549AC66-EA59-4D19-A01A-65D143F018A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F549AC66-EA59-4D19-A01A-65D143F018A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F549AC66-EA59-4D19-A01A-65D143F018A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -47,5 +40,9 @@ Global
 		{7C200D23-5BCE-4B9F-A6EA-64C0E3E289D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C200D23-5BCE-4B9F-A6EA-64C0E3E289D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C200D23-5BCE-4B9F-A6EA-64C0E3E289D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1350CE3-520F-4E55-871F-6D8EBCBEF201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1350CE3-520F-4E55-871F-6D8EBCBEF201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1350CE3-520F-4E55-871F-6D8EBCBEF201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1350CE3-520F-4E55-871F-6D8EBCBEF201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
