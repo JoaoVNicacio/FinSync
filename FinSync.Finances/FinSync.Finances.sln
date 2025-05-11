@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.Infra", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.Application", "Src\FinSync.Finances.Application\FinSync.Finances.Application.csproj", "{7C200D23-5BCE-4B9F-A6EA-64C0E3E289D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.API", "FinSync.Finances.API\FinSync.Finances.API.csproj", "{4B61F12E-54AB-4386-9D0B-9EA0E198DC3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.API", "Src/FinSync.Finances.API\FinSync.Finances.API.csproj", "{4B61F12E-54AB-4386-9D0B-9EA0E198DC3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
