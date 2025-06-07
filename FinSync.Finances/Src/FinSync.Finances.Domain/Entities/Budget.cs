@@ -1,11 +1,10 @@
 namespace FinSync.Finances.Domain.Entities;
 
-public class Budget
+public class Budget : DomainEntity<Guid>
 {
   #region Properties
-
-  public Guid Id { get; private set; }
-  public string UserId { get; private set; } = null!;
+  
+  public string? UserId { get; private set; }
   public string Name { get; private set; } = null!;
   public byte NotificationThresholdPercentage { get; private set; }
   public decimal PlannedAmount { get; private set; }

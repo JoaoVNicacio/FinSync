@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Libs\DotNET\FinSync.Core\FinSync.Core.csproj" />
+    </ItemGroup>
+
 </Project>
