@@ -1,6 +1,6 @@
 namespace FinSync.Finances.Domain.Entities;
 
-public class FinancialAccount
+public class FinancialAccount : DomainEntity<Guid>
 {
   #region Constructors
 
@@ -26,13 +26,10 @@ public class FinancialAccount
 
   #region BasicProperties
   
-  public Guid Id { get; private set; }
   public string UserId { get; private set; } = null!;
   public string? Name { get; private set; }
   public decimal Balance { get; private set; }
   public string? CurrencyAcronym { get; private set; }
-  public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
-  public DateTime UpdatedAt { get; private set; } = DateTime.UtcNow;
   
   #region Compositions and Relations
 

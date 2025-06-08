@@ -1,6 +1,6 @@
 namespace FinSync.Finances.Domain.Entities;
 
-public class TransactionCategory
+public class TransactionCategory : DomainEntity<Guid>
 {
   #region Constructors
 
@@ -18,8 +18,7 @@ public class TransactionCategory
   #endregion
 
   #region Properties
-
-  public Guid Id { get; private set; }
+  
   public string UserId { get; private set; } = null!;
   public string? Name { get; private set; }
   public ETransactionType Type { get; private set; }
