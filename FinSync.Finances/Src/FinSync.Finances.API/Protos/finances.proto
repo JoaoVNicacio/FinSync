@@ -68,12 +68,30 @@ message TransactionCategory {
   TransactionType type = 4;
 }
 
+// DTOs
+message FinancialAccountForCreationDTO {
+  string userId = 1;
+  string name = 2;
+  double balance = 3;
+  string currencyAcronym = 4;
+}
+
+message FinancialAccountForUpdateDTO{
+  string id = 1;
+  string userId = 2;
+  string name = 3;
+  double balance = 4;
+  string currencyAcronym = 5;
+}
+
 // Common
 message IdRequest {
   string id = 1;
 }
 
-message Empty {}
+message DeleteResult {
+  bool wasSuccessful = 1;
+}
 
 message UserRequest {
   string userId = 1;
@@ -102,10 +120,10 @@ message TransactionCategoryList {
 
 // Services
 service FinancialAccountService {
-  rpc Create(FinancialAccount) returns (FinancialAccount);
+  rpc Create(FinancialAccountForCreationDTO) returns (FinancialAccount);
   rpc GetById(IdRequest) returns (FinancialAccount);
-  rpc Update(FinancialAccount) returns (FinancialAccount);
-  rpc Delete(IdRequest) returns (Empty);
+  rpc Update(FinancialAccountForUpdateDTO) returns (FinancialAccount);
+  rpc Delete(IdRequest) returns (DeleteResult);
   rpc ListByUser(UserRequest) returns (FinancialAccountList);
 }
 
@@ -113,7 +131,7 @@ service RecurringExpenseService {
   rpc Create(RecurringExpense) returns (RecurringExpense);
   rpc GetById(IdRequest) returns (RecurringExpense);
   rpc Update(RecurringExpense) returns (RecurringExpense);
-  rpc Delete(IdRequest) returns (Empty);
+  rpc Delete(IdRequest) returns (DeleteResult);
   rpc ListByUser(UserRequest) returns (RecurringExpenseList);
 }
 
@@ -121,7 +139,7 @@ service RecurringIncomeService {
   rpc Create(RecurringIncome) returns (RecurringIncome);
   rpc GetById(IdRequest) returns (RecurringIncome);
   rpc Update(RecurringIncome) returns (RecurringIncome);
-  rpc Delete(IdRequest) returns (Empty);
+  rpc Delete(IdRequest) returns (DeleteResult);
   rpc ListByUser(UserRequest) returns (RecurringIncomeList);
 }
 
@@ -129,7 +147,7 @@ service TransactionService {
   rpc Create(Transaction) returns (Transaction);
   rpc GetById(IdRequest) returns (Transaction);
   rpc Update(Transaction) returns (Transaction);
-  rpc Delete(IdRequest) returns (Empty);
+  rpc Delete(IdRequest) returns (DeleteResult);
   rpc ListByUser(UserRequest) returns (TransactionList);
 }
 
@@ -137,6 +155,6 @@ service TransactionCategoryService {
   rpc Create(TransactionCategory) returns (TransactionCategory);
   rpc GetById(IdRequest) returns (TransactionCategory);
   rpc Update(TransactionCategory) returns (TransactionCategory);
-  rpc Delete(IdRequest) returns (Empty);
+  rpc Delete(IdRequest) returns (DeleteResult);
   rpc ListByUser(UserRequest) returns (TransactionCategoryList);
 }
