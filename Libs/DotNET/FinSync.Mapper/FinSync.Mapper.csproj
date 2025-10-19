@@ -6,9 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\Libs\DotNET\FinSync.Mapper\FinSync.Mapper.csproj" />
-      <ProjectReference Include="..\FinSync.Finances.Domain\FinSync.Finances.Domain.csproj" />
-    </ItemGroup>
-
 </Project>

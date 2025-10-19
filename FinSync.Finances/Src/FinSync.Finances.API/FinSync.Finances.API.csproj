@@ -7,7 +7,27 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+        <Protobuf Include="Protos\finances.proto" GrpcServices="Server" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+        <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.71.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.6" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Libs\DotNET\FinSync.Core\FinSync.Core.csproj" />
+      <ProjectReference Include="..\..\..\Libs\DotNET\FinSync.Mapper\FinSync.Mapper.csproj" />
+      <ProjectReference Include="..\FinSync.Finances.Application\FinSync.Finances.Application.csproj" />
+      <ProjectReference Include="..\FinSync.Finances.Domain\FinSync.Finances.Domain.csproj" />
+      <ProjectReference Include="..\FinSync.Finances.Infra\FinSync.Finances.Infra.csproj" />
     </ItemGroup>
 
 </Project>

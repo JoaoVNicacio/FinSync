@@ -1,25 +1,27 @@
+using FinSync.Finances.API.Config;
+using FinSync.Finances.API.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddGrpc(options =>
+{
+  options.EnableDetailedErrors = true;
+});
+
+builder.Services.AddGrpc();
+builder.Services.AddGrpcReflection();
+
+builder.InjectDbContext();
+builder.InjectDesignatedDependencies();
+builder.InjectObjectMapper();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
+app.MapGrpcService<FinancialAccountGRPCService>();
+app.MapGrpcReflectionService();
 
 app.Run();
