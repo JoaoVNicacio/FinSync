@@ -11,7 +11,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Grpc.AspNetCore" Version="2.57.0"/>
+        <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
+        <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.71.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,6 +24,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\Libs\DotNET\FinSync.Core\FinSync.Core.csproj" />
+      <ProjectReference Include="..\..\..\Libs\DotNET\FinSync.Mapper\FinSync.Mapper.csproj" />
       <ProjectReference Include="..\FinSync.Finances.Application\FinSync.Finances.Application.csproj" />
       <ProjectReference Include="..\FinSync.Finances.Domain\FinSync.Finances.Domain.csproj" />
       <ProjectReference Include="..\FinSync.Finances.Infra\FinSync.Finances.Infra.csproj" />

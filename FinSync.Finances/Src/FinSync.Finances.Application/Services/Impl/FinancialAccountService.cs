@@ -1,15 +1,21 @@
 using FinSync.Finances.Application.DTOs;
 using FinSync.Finances.Application.Services.Contracts;
 using FinSync.Finances.Domain.Entities;
+using FinSync.Finances.Domain.Repositories;
+using FinSync.Mapper;
 
-namespace FinSync.Finances.Application.Services;
+namespace FinSync.Finances.Application.Services.Impl;
 
-public class FinancialAccountService : IFinancialAccountService
+public class FinancialAccountService(
+  IFinancialAccountRepository repository,
+  IMapper mapper
+) : IFinancialAccountService
 {
-  public Task<FinancialAccount> CreateAsync(FinancialAccountForCreationDTO account)
-  {
-    throw new NotImplementedException();
-  }
+  private readonly IMapper _mapper = mapper;
+  private readonly IFinancialAccountRepository _repository = repository;
+
+  public async Task<FinancialAccount> CreateAsync(FinancialAccountForCreationDTO account) => await _repository.Create(
+    _mapper.Map<FinancialAccountForCreationDTO, FinancialAccount>(account));
 
   public Task<FinancialAccount?> GetByIdAsync(Guid Id)
   {

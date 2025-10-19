@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Finances.API", "Src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Core", "..\Libs\DotNET\FinSync.Core\FinSync.Core.csproj", "{D5317F86-9CDD-4754-8038-A68097733600}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinSync.Mapper", "..\Libs\DotNET\FinSync.Mapper\FinSync.Mapper.csproj", "{BEC1EA54-10A1-4861-A0F9-7B1199C9E9E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,5 +52,9 @@ Global
 		{D5317F86-9CDD-4754-8038-A68097733600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5317F86-9CDD-4754-8038-A68097733600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5317F86-9CDD-4754-8038-A68097733600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEC1EA54-10A1-4861-A0F9-7B1199C9E9E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC1EA54-10A1-4861-A0F9-7B1199C9E9E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC1EA54-10A1-4861-A0F9-7B1199C9E9E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC1EA54-10A1-4861-A0F9-7B1199C9E9E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,11 +1,25 @@
+using FinSync.Finances.Application.UseCases;
+using FinSync.Mapper;
+using Grpc.Core;
+
 namespace FinSync.Finances.API.Services;
 
-public class FinancialAccountGRPCService : FinancialAccountService.FinancialAccountServiceBase
+public class FinancialAccountGRPCService(
+  IMapper mapper,
+  ICreateAsyncUseCase<ApplicationsDTOS.FinancialAccountForCreationDTO, DomainEntities.FinancialAccount>
+    createAsyncUseCase
+) : FinancialAccountService.FinancialAccountServiceBase
 {
-  public async Task<FinancialAccount> Create(FinancialAccountForCreationDTO account)
-  {
-    return new();
-  }
+  private readonly IMapper _mapper = mapper;
+
+  private readonly ICreateAsyncUseCase
+    <ApplicationsDTOS.FinancialAccountForCreationDTO, DomainEntities.FinancialAccount>
+    _createAsyncUseCase = createAsyncUseCase;
+
+  public override async Task<FinancialAccount> Create(FinancialAccountForCreationDTO request, ServerCallContext context) =>
+      _mapper.Map<DomainEntities.FinancialAccount, FinancialAccount>(
+        await _createAsyncUseCase.CreateAsync(_mapper
+          .Map<FinancialAccountForCreationDTO, ApplicationsDTOS.FinancialAccountForCreationDTO>(request)));
 
   public async Task<FinancialAccount?> GetById(IdRequest idRequest)
   {

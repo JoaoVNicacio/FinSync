@@ -32,7 +32,7 @@ public class FinancialAccountRepository(FinancesDBContext context) : IFinancialA
   {
     var entry = await GetById(id);
     if (entry is null) return false;
-    
+
     _context.FinancialAccounts.Remove(entry);
     return await _context.SaveChangesAsync() > 0;
   }

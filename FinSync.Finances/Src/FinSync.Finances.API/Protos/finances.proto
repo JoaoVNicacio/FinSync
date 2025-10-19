@@ -18,7 +18,7 @@ message FinancialAccount {
   string id = 1;
   string userId = 2;
   string name = 3;
-  double balance = 4;
+  int64 balance = 4;
   string currencyAcronym = 5;
   google.protobuf.Timestamp createdAt = 6;
   google.protobuf.Timestamp updatedAt = 7;
@@ -27,7 +27,7 @@ message FinancialAccount {
 message RecurringExpense {
   string id = 1;
   string userId = 2;
-  double amount = 3;
+  int64 amount = 3;
   string description = 4;
   string currencyAcronym = 5;
   google.protobuf.Timestamp dateOfOccurrence = 6;
@@ -39,7 +39,7 @@ message RecurringExpense {
 message RecurringIncome {
   string id = 1;
   string userId = 2;
-  double amount = 3;
+  int64 amount = 3;
   string description = 4;
   string currencyAcronym = 5;
   google.protobuf.Timestamp dateOfOccurrence = 6;
@@ -51,7 +51,7 @@ message RecurringIncome {
 message Transaction {
   string id = 1;
   string userId = 2;
-  double amount = 3;
+  int64 amount = 3;
   string description = 4;
   string currencyAcronym = 5;
   google.protobuf.Timestamp dateOfOccurrence = 6;
@@ -72,7 +72,7 @@ message TransactionCategory {
 message FinancialAccountForCreationDTO {
   string userId = 1;
   string name = 2;
-  double balance = 3;
+  int64 balance = 3;
   string currencyAcronym = 4;
 }
 
@@ -80,7 +80,7 @@ message FinancialAccountForUpdateDTO{
   string id = 1;
   string userId = 2;
   string name = 3;
-  double balance = 4;
+  int64 balance = 4;
   string currencyAcronym = 5;
 }
 
