@@ -5,7 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinSync.Finances.Infra.Repositories;
 
-public class FinancialAccountRepository(FinancesDBContext context) : IFinancialAccountRepository
+public sealed class FinancialAccountRepository(FinancesDBContext context) :
+  IFinancialAccountRepository
 {
   private readonly FinancesDBContext _context = context;
 

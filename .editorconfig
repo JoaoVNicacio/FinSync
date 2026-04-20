@@ -1,0 +1,73 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# C# files
+[*.cs]
+
+#### Core EditorConfig Options ####
+
+# Indentation and spacing
+indent_size = 2
+indent_style = space
+tab_width = 2
+
+# New line preferences
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+#### C# Formatting Rules ####
+
+# Maximum line length
+
+# Naming styles
+dotnet_naming_style.upper_snake_case.capitalization = all_upper
+dotnet_naming_style.upper_snake_case.word_separator = _
+
+# Symbol group for constants
+dotnet_naming_symbols.constant_fields.applicable_kinds = field
+dotnet_naming_symbols.constant_fields.required_modifiers = const
+
+# Naming rules
+dotnet_naming_rule.constant_fields_should_be_upper_snake_case.severity = warning
+dotnet_naming_rule.constant_fields_should_be_upper_snake_case.symbols = constant_fields
+dotnet_naming_rule.constant_fields_should_be_upper_snake_case.style = upper_snake_case
+
+# Alignment preferences
+max_line_length = 90
+csharp_align_multiline_parameter = true
+csharp_align_multiline_extends_list = true
+csharp_align_multiline_calls = true
+csharp_align_multiline_binary_expressions = true
+csharp_align_multiline_method_declarations = true
+csharp_align_multiline_property_pattern = true
+csharp_align_multiline_switch_expression = true
+
+# Prefer pattern matching over traditional constructs
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+
+# Prefer switch expressions (modern style)
+csharp_style_prefer_switch_expression = true:suggestion
+
+# Prefer property patterns: obj is { Prop: value }
+csharp_style_prefer_property_pattern = true:suggestion
+
+dotnet_remove_unnecessary_imports = true
+
+csharp_style_namespace_declarations = file_scoped:warning
+
+# Prefer "using var" instead of using(...) { }
+csharp_prefer_simple_using_statement = true:warning
+
+# Prefer simplified object creation
+csharp_style_implicit_object_creation_when_type_is_apparent = true:suggestion
+
+# Prefer expression-bodied members where possible
+csharp_style_expression_bodied_methods = when_possible:suggestion
+
+# Prefer null-coalescing / null propagation
+csharp_style_prefer_null_check_over_type_check = true:suggestion

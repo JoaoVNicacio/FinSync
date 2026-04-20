@@ -5,7 +5,7 @@ public class RecurringIncome : DomainEntity<Guid>
   #region Properties
 
   #region BasicProperties
-  
+
   public string UserId { get; private set; } = null!;
   public decimal Amount { get; private set; }
   public string? Description { get; private set; }

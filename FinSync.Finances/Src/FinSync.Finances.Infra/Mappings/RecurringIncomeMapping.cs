@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FinSync.Finances.Infra.Mappings;
 
-public class RecurringIncomeMapping : IEntityTypeConfiguration<RecurringIncome>
+public sealed class RecurringIncomeMapping :
+  IEntityTypeConfiguration<RecurringIncome>
 {
   public void Configure(EntityTypeBuilder<RecurringIncome> builder)
   {

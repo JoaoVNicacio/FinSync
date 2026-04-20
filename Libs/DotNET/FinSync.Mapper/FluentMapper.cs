@@ -2,7 +2,7 @@ namespace FinSync.Mapper;
 
 public class FluentMapper : IMapper
 {
-  private readonly Dictionary<(Type, Type), object> _mappings = new();
+  private readonly Dictionary<(Type, Type), object> _mappings = [];
   private readonly object _lock = new();
 
   public void Register<TSource, TDestination>(Func<TSource, TDestination> map)
@@ -19,7 +19,8 @@ public class FluentMapper : IMapper
     var key = (typeof(TSource), typeof(TDestination));
 
     return _mappings.TryGetValue(key, out var config)
-      ? ((TypeMapConfig<TSource, TDestination>)config).MappingFunc(source) 
-      : throw new InvalidOperationException($"No mapping registered for {typeof(TSource)} → {typeof(TDestination)}");
+      ? ((TypeMapConfig<TSource, TDestination>)config).MappingFunc(source)
+      : throw new InvalidOperationException(
+        $"No mapping registered for {typeof(TSource)} → {typeof(TDestination)}");
   }
 }

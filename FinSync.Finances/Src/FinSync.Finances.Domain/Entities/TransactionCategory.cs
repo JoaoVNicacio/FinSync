@@ -18,7 +18,7 @@ public class TransactionCategory : DomainEntity<Guid>
   #endregion
 
   #region Properties
-  
+
   public string UserId { get; private set; } = null!;
   public string? Name { get; private set; }
   public ETransactionType Type { get; private set; }

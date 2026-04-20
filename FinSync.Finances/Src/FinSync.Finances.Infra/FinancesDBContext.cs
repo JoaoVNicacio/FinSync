@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FinSync.Finances.Infra;
 
-public class FinancesDBContext(DbContextOptions<FinancesDBContext> options) : DbContext(options)
+public sealed class FinancesDBContext(
+  DbContextOptions<FinancesDBContext> options) : DbContext(options)
 {
   public DbSet<FinancialAccount> FinancialAccounts { get; private set; }
   public DbSet<RecurringExpense> RecurringExpenses { get; private set; }
@@ -17,11 +18,16 @@ public class FinancesDBContext(DbContextOptions<FinancesDBContext> options) : Db
   {
     base.OnModelCreating(modelBuilder);
 
-    modelBuilder.Entity<FinancialAccount>(new FinancialAccountMapping().Configure);
-    modelBuilder.Entity<RecurringExpense>(new RecurringExpenseMapping().Configure);
-    modelBuilder.Entity<RecurringIncome>(new RecurringIncomeMapping().Configure);
-    modelBuilder.Entity<Transaction>(new TransactionMapping().Configure);
-    modelBuilder.Entity<TransactionCategory>(new TransactionCategoryMapping().Configure);
+    modelBuilder.Entity<FinancialAccount>(
+      new FinancialAccountMapping().Configure);
+    modelBuilder.Entity<RecurringExpense>(
+      new RecurringExpenseMapping().Configure);
+    modelBuilder.Entity<RecurringIncome>(
+      new RecurringIncomeMapping().Configure);
+    modelBuilder.Entity<Transaction>(
+      new TransactionMapping().Configure);
+    modelBuilder.Entity<TransactionCategory>(
+      new TransactionCategoryMapping().Configure);
     modelBuilder.Entity<Budget>(new BudgetMapping().Configure);
   }
 }

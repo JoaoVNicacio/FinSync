@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FinSync.Finances.Infra.Mappings;
 
-public class FinancialAccountMapping : IEntityTypeConfiguration<FinancialAccount>
+public sealed class FinancialAccountMapping :
+  IEntityTypeConfiguration<FinancialAccount>
 {
   public void Configure(EntityTypeBuilder<FinancialAccount> builder)
   {

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FinSync.Finances.Infra.Mappings;
 
-public class BudgetMapping : IEntityTypeConfiguration<Budget>
+public sealed class BudgetMapping : IEntityTypeConfiguration<Budget>
 {
   public void Configure(EntityTypeBuilder<Budget> builder)
   {

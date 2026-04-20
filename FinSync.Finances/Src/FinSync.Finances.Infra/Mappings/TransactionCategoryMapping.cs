@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FinSync.Finances.Infra.Mappings;
 
-public class TransactionCategoryMapping : IEntityTypeConfiguration<TransactionCategory>
+public sealed class TransactionCategoryMapping :
+  IEntityTypeConfiguration<TransactionCategory>
 {
   public void Configure(EntityTypeBuilder<TransactionCategory> builder)
   {
